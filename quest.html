@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Игра-квест</title>
+	<style>
+		.bg-img {
+			background-image: url('bg.jpg');
+			height: 900px;
+			background-size: 100% 100%;
+		}
+		.point {
+			font-family: Arial;
+			background: orange;
+			width: 125px;
+			padding-left: 30px;
+			padding-top: 5px;
+			padding-bottom: 5px;
+		}
+		.score {
+			color: red;
+		}
+		.apple {
+			position: absolute;
+			left: 300px;
+			top: 100px;
+			width: 30px;
+		}
+		.mushroom {
+			position: absolute;
+			left: 1100px;
+			top: 700px;
+			width: 50px;
+		}
+		.butterfly {
+			position: absolute;
+			left: 180px;
+			top: 500px;
+			width: 50px;
+		}
+		.leaf {
+			position: absolute;
+			left: 208px;
+			top: 306px;
+			width: 50px;
+		}
+		
+	</style>
+</head>
+<body>
+	<!-- Див с квестом -->
+	<div class="bg-img">
+		<!-- див для очков -->
+		<div class="point">
+			<h2>Найди:</h2>
+			<h4 class="appleText">1. Яблоко</h4>
+			<h4 class="mushroomText">2. Гриб</h4>
+			<h4 class="butterflyText">3. Бабочку</h4>
+			<h4 class="leafText">4. Листочек</h4>
+			<h1>Очки:</h1>
+			<h1 class="score"> 0</h1>
+		</div>
+		<!-- что нужно найти --> 
+		<img class="apple" src="apple.png">
+		<img class="mushroom" src="mushroom.png">
+		<img class="butterfly" src="butterfly.png">
+		<img class="leaf" src="leaf.png">
+	</div>
+
+<div class="win" style="display: none; text-align:center; margin-top:50px;">
+    <img src="gettyimages-1447471637-640x640.jpg" alt="You Win!" width="400">
+    <h1>Ты победил!</h1>
+</div>
+
+	<script type="text/javascript">
+		let score = 0;
+		// Яблоко
+		document.querySelector('.apple').onclick = function() {
+			alert('Класс! Ты нашел яблоко.');
+			document.querySelector('.apple').style.display = 'none';
+			score = score + 1;
+			document.querySelector('.score').innerHTML = score;
+			document.querySelector('.appleText').style.textDecoration = 'line-through';
+			if (score == 4 ){
+			document.querySelector('.bg-img').style.display ='none';
+			document.querySelector('.win').style.display ='block';
+			}
+	
+
+		}
+
+		// Гриб
+		document.querySelector('.mushroom').onclick = function() {
+			alert('Класс! Ты нашел гриб.');
+			document.querySelector('.mushroom').style.display = 'none';
+			score = score + 1;
+			document.querySelector('.score').innerHTML = score;
+			document.querySelector('.mushroomText').style.textDecoration = 'line-through';
+				if (score == 4 ){
+			document.querySelector('.bg-img').style.display ='none';
+			document.querySelector('.win').style.display ='block';
+			}
+		}
+
+		// Бабочка
+		document.querySelector('.butterfly').onclick = function() {
+			alert('Класс! Ты нашел бабочку.');
+			document.querySelector('.butterfly').style.display = 'none';
+			score = score + 1;
+			document.querySelector('.score').innerHTML = score;
+			document.querySelector('.butterflyText').style.textDecoration = 'line-through';
+				if (score == 4 ){
+			document.querySelector('.bg-img').style.display ='none';
+			document.querySelector('.win').style.display ='block';
+			}
+		}
+		
+		// Листочек
+		document.querySelector('.leaf').onclick = function() {
+			alert('Класс! Ты нашел листочек.');
+			document.querySelector('.leaf').style.display = 'none';
+			score = score + 1;
+			document.querySelector('.score').innerHTML = score;
+			document.querySelector('.leafText').style.textDecoration = 'line-through';
+				if (score == 4 ){
+			document.querySelector('.bg-img').style.display ='none';
+			document.querySelector('.win').style.display ='block';
+			}
+		}
+	</script>
+</body>
+</html>
